@@ -9,9 +9,22 @@
 </head>
 <body>
     <h1>Zadanie č.5</h1>
-    <button  onclick="Layers()">Vrstvy</button>
     <button onclick="AddLayers()">Pridať!</button>
-    <pre class="log"><code id="log"></code></pre>
+    <style>
+        .map 
+        {
+            height: 400px;
+            width: 100%;
+        }
+        .log-container 
+        {
+            height: 200px;
+            overflow: scroll;
+        }
+    </style>
+    <div id="map" class="map"></div>
+    <br>
+    <button  onclick="Layers()">Vrstvy</button>
     <script src="./index.js"></script>
 </body>
 </html>
