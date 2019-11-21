@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON Test</title>
+</head>
+
+<body>
+    <div id="myData"></div>
+    <h1 id="heading">Testik</h1>
+    <table>
+            <tbody id=tabulka>
+            <tr></tr>
+    </table> 
+    <script>
+        fetch('http://147.175.19.200:8765/json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+
+        function appendData(data) {
+            console.log(data);
+            var mainContainer = document.getElementById("myData");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = data[i].description + ' ' + data[i].name + ' ' + data[i].numOfRows;
+                mainContainer.appendChild(div);
+            }
+        }
+        //data.rows.forEach(rows => { const tabulka =
+        //    document.getElementById('tabulka'), const riadok = 
+        //    document.createElement('tr'); riadok.innerHTML = '<td>' + row.name + '<td>' + row.width + '<td>' + '<td style ="bacround-color: ' + (row.visible ? ...)
+        //    
+        //});
+    </script>
+</body>
+</html>
