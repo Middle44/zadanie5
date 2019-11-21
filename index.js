@@ -37,11 +37,9 @@ function Layers()
   }).then(function (text) 
   {
     var data = parser.read(text);
-    //console.log(data.Capability.Layer.Layer);
-    //console.log(data.Capability.Layer.Layer[1].Name);
     data.Capability.Layer.Layer.forEach(layer => 
       {
-        //console.log(layer.Name, layer.queryable)
+        //console.log(layer.Name, layer.Title, layer.queryable)
       });
     var table = "<th>Name</th><th>Queryable</th><th>Checkbox</th>";
     var rows = data.Capability.Layer.Layer.length;
